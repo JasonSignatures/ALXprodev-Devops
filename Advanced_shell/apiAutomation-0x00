@@ -1,0 +1,7 @@
+#!/bin/bash
+response=$(curl -s -o data.json -w "%{http_code}" https://pokeapi.co/api/v2/pokemon/pikachu)
+if [ "$response" != "200" ]
+then
+  echo "Error: Failed to fetch data for Pikachu" > errors.txt
+fi
+
